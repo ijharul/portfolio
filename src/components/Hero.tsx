@@ -1,9 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowRight, Download } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Download, Code } from "lucide-react";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import RedirectModal from "./RedirectModal";
+
 
 const TypewriterText = ({ texts }: { texts: string[] }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -39,8 +42,27 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
 };
 
 export default function Hero() {
+  const [showRedirect, setShowRedirect] = useState(false);
+
+  const handleLeetCodeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowRedirect(true);
+  };
+
+  const handleConfirm = () => {
+    window.open("https://leetcode.com/u/ijharul/", "_blank");
+    setShowRedirect(false);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <RedirectModal 
+        isOpen={showRedirect}
+        onClose={() => setShowRedirect(false)}
+        onConfirm={handleConfirm}
+        targetName="LeetCode"
+      />
+
       {/* Background Animation */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[150px] animate-pulse" />
@@ -110,7 +132,19 @@ export default function Hero() {
                 <a href="https://www.linkedin.com/in/ijharul-haque-896394300/" target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-full text-foreground hover:text-secondary transition-all hover:scale-110">
                   <Linkedin size={24} />
                 </a>
+                <a 
+                  href="https://leetcode.com/u/ijharul/" 
+                  onClick={handleLeetCodeClick}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 glass rounded-full text-foreground hover:text-yellow-500 transition-all hover:scale-110" 
+                  title="LeetCode Profile"
+                >
+                  <Code size={24} />
+                </a>
+
               </div>
+
             </div>
 
           </motion.div>

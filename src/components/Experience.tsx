@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, Award, Star, Code, Cpu } from "lucide-react";
-
+import { useState } from "react";
 import SectionReveal from "./SectionReveal";
+import RedirectModal from "./RedirectModal";
 
 const experiences = [
   {
@@ -30,9 +31,9 @@ const achievements = [
     icon: <Star className="text-accent" />
   },
   {
-    title: "165+ DSA Problems Solved",
+    title: "176+ DSA & 30+ SQL Problems",
     year: "Ongoing",
-    description: "Consistent problem solver on LeetCode and HackerRank, focusing on advanced Data Structures and Algorithms.",
+    description: "Consistent problem solver on LeetCode, focusing on advanced Data Structures, Algorithms, and Database Management.",
     icon: <Code className="text-emerald-400" />
   },
   {
@@ -51,8 +52,28 @@ const achievements = [
 
 
 export default function Experience() {
+  const [showRedirect, setShowRedirect] = useState(false);
+
+  const handleCardClick = (title: string) => {
+    if (title.includes("DSA") || title.includes("SQL")) {
+      setShowRedirect(true);
+    }
+  };
+
+  const handleConfirm = () => {
+    window.open("https://leetcode.com/u/ijharul/", "_blank");
+    setShowRedirect(false);
+  };
+
   return (
     <section id="experience" className="py-24 relative">
+      <RedirectModal 
+        isOpen={showRedirect}
+        onClose={() => setShowRedirect(false)}
+        onConfirm={handleConfirm}
+        targetName="LeetCode"
+      />
+
       <div className="container mx-auto px-6">
         <SectionReveal>
           <div className="grid lg:grid-cols-2 gap-16">
@@ -96,7 +117,10 @@ export default function Experience() {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.2 }}
-                    className="p-6 glass rounded-2xl flex gap-6 hover:bg-black/5 dark:hover:bg-white/5 transition-all group"
+                    onClick={() => handleCardClick(ach.title)}
+                    className={`p-6 glass rounded-2xl flex gap-6 hover:bg-black/5 dark:hover:bg-white/5 transition-all group ${
+                      (ach.title.includes("DSA") || ach.title.includes("SQL")) ? "cursor-pointer border-primary/20 hover:border-primary/50" : ""
+                    }`}
                   >
                     <div className="p-4 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:scale-110 transition-transform flex-shrink-0 h-fit">
                       {ach.icon}
@@ -105,6 +129,11 @@ export default function Experience() {
                       <span className="text-xs font-bold text-slate-500 dark:text-gray-500 uppercase tracking-widest">{ach.year}</span>
                       <h3 className="text-xl font-bold text-foreground mt-1 mb-2">{ach.title}</h3>
                       <p className="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">{ach.description}</p>
+                      {(ach.title.includes("DSA") || ach.title.includes("SQL")) && (
+                        <div className="mt-3 text-xs font-bold text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                          Click to verify profile →
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -126,9 +155,7 @@ export default function Experience() {
                 >
                   View Full CV
                 </a>
-
               </motion.div>
-
             </div>
           </div>
         </SectionReveal>

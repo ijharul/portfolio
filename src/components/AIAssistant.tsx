@@ -39,9 +39,10 @@ export default function AIAssistant() {
       answer: "His top projects are: 1. Campus-Nexus (Alumni Platform), 2. PassOP (Password Manager), and 3. SkyCast (Weather App). You can see them in the Projects section!"
     },
     {
-      keywords: ["achievements", "hackathon", "sih", "hacktoberfest", "national"],
-      answer: "He is a National Level Finalist for Smart India Hackathon (SIH) 2025 and a Level 4 contributor in Hacktoberfest 2024."
+      keywords: ["achievements", "hackathon", "sih", "hacktoberfest", "national", "dsa", "leetcode", "sql", "problems"],
+      answer: "He has solved 176+ DSA problems and 30+ SQL problems on LeetCode. He is also a National Level Finalist for SIH 2025 and a Level 4 contributor in Hacktoberfest 2024."
     },
+
     {
       keywords: ["contact", "email", "phone", "call", "hire", "reach", "location"],
       answer: "You can reach Ijharul at haqueijharul0786@gmail.com or call him at +91 76349 27980. He is based in Kolkata, India."

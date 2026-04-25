@@ -1,13 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MapPin, Phone, Code } from "lucide-react";
+
 import SectionReveal from "./SectionReveal";
 import { useState } from "react";
+import RedirectModal from "./RedirectModal";
 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
   const [isSending, setIsSending] = useState(false);
+  const [showRedirect, setShowRedirect] = useState(false);
+
+  const handleLeetCodeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowRedirect(true);
+  };
+
+  const handleConfirm = () => {
+    window.open("https://leetcode.com/u/ijharul/", "_blank");
+    setShowRedirect(false);
+  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +35,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
+      <RedirectModal 
+        isOpen={showRedirect}
+        onClose={() => setShowRedirect(false)}
+        onConfirm={handleConfirm}
+        targetName="LeetCode"
+      />
       {/* Background Orbs */}
+
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-[100px] -z-10" />
 
@@ -81,9 +102,21 @@ export default function Contact() {
                     <a href="https://www.linkedin.com/in/ijharul-haque-896394300/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-2xl text-foreground hover:text-secondary transition-all hover:scale-110">
                       <Linkedin size={24} />
                     </a>
+                    <a 
+                      href="https://leetcode.com/u/ijharul/" 
+                      onClick={handleLeetCodeClick}
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-4 glass rounded-2xl text-foreground hover:text-yellow-500 transition-all hover:scale-110" 
+                      title="LeetCode"
+                    >
+                      <Code size={24} />
+                    </a>
+
                     <a href="mailto:haqueijharul0786@gmail.com" className="p-4 glass rounded-2xl text-foreground hover:text-accent transition-all hover:scale-110">
                       <Mail size={24} />
                     </a>
+
                   </div>
 
                 </div>
