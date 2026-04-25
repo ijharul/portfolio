@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: #7c3aed;
+  --color-secondary: #3b82f6;
+  --color-accent: #10b981;
+  
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  
+  --animate-typing: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 8s linear infinite;
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-primary) }
+  }
+  @keyframes glow {
+    from { box-shadow: 0 0 10px -10px var(--color-primary); }
+    to { box-shadow: 0 0 20px 5px var(--color-primary); }
+  }
+}
+
+:root {
+  --background: #030014;
+  --foreground: #ffffff;
+  --primary: #8b5cf6;
+  --secondary: #3b82f6;
+  --accent: #10b981;
+}
+
+[data-theme='light'] {
+  --background: #ffffff;
+  --foreground: #020617;
+  --primary: #6d28d9;
+  --secondary: #2563eb;
+  --accent: #059669;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  position: relative;
+}
+
+/* Realistic Background Mesh */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-theme='dark'] body::before {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+}
+
+/* Noise Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  z-index: -1;
+  pointer-events: none;
+  filter: contrast(120%) brightness(120%);
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 transition-all duration-300;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  [data-theme='light'] .glass {
+    @apply bg-slate-50/80 border-slate-200/60 shadow-lg shadow-slate-200/50;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent transition-all;
+  }
+
+  [data-theme='light'] .text-gradient {
+    @apply from-purple-700 via-blue-700 to-emerald-700;
+  }
+}
+
+
+
+
+
+
