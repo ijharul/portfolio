@@ -17,11 +17,11 @@ const projects = [
     color: "from-purple-500 to-blue-500"
   },
   {
-    title: "Secure Password Manager",
-    description: "A secure full-stack password manager with authentication and encrypted credential storage using AES and bcrypt.",
-    tech: ["React", "Node.js", "MongoDB", "JWT"],
-    image: "/passop.png",
-    github: "https://github.com/ijharul/passop",
+    title: "VaultX - Secure Password Manager",
+    description: "A professional-grade password manager with zero-knowledge encryption, featuring secure credential storage using AES-256 and bcrypt.",
+    tech: ["React", "Node.js", "MongoDB", "JWT", "AES-256"],
+    image: "/vaultx.png",
+    github: "https://github.com/ijharul/VaultX",
     demo: "https://passop-flame.vercel.app/",
     color: "from-emerald-500 to-teal-600"
   },

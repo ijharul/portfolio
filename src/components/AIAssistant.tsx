@@ -36,7 +36,7 @@ export default function AIAssistant() {
     },
     {
       keywords: ["projects", "work", "portfolio", "alumni", "password", "weather"],
-      answer: "His top projects are: 1. Campus-Nexus (Alumni Platform), 2. PassOP (Password Manager), and 3. SkyCast (Weather App). You can see them in the Projects section!"
+      answer: "His top projects are: 1. Campus-Nexus (Alumni Platform), 2. VaultX (Secure Password Manager), and 3. SkyCast (Weather App). You can see them in the Projects section!"
     },
     {
       keywords: ["achievements", "hackathon", "sih", "hacktoberfest", "national", "dsa", "leetcode", "sql", "problems"],
