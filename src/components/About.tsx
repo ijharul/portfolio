@@ -19,12 +19,12 @@ const skills = [
   {
     category: "Backend & DB",
     icon: <Server className="text-purple-400" />,
-    items: ["Node.js", "Express.js", "REST APIs", "MongoDB", "SQL", "Auth"]
+    items: ["Node.js", "Express.js", "REST APIs", "MongoDB", "SQL", "Auth (JWT/OAuth)"]
   },
   {
-    category: "AI & Programming",
+    category: "AI & DevOps",
     icon: <Cpu className="text-emerald-400" />,
-    items: ["OpenAI API", "Prompt Engineering", "C++", "Java", "Python", "JavaScript"]
+    items: ["OpenAI API", "Groq AI", "Prompt Engineering", "Docker", "CI/CD", "Vercel/Render"]
   }
 ];
 
@@ -69,16 +69,13 @@ export default function About() {
                 
                 <div className="space-y-6 text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
                   <p>
-                    I am a <span className="text-foreground font-medium">B.Tech Computer Science</span> student at <span className="text-primary font-semibold">Techno Main Salt Lake (TMSL)</span> (Batch 2023–2027), 
-                    deeply passionate about the intersection of <span className="text-primary">web development</span> and <span className="text-secondary">artificial intelligence</span>.
+                    I am an <span className="text-foreground font-medium">SDE-focused Full Stack Developer</span> and a <span className="text-primary font-semibold">B.Tech CSE student</span> at <span className="text-primary font-semibold">Techno Main Salt Lake</span> (2023–2027).
                   </p>
                   <p>
-                    My expertise lies in building scalable web applications using the <span className="text-foreground">MERN stack</span>, while constantly 
-                    exploring new ways to integrate AI to create smarter, more intuitive user experiences.
+                    My expertise lies in building scalable <span className="text-foreground">MERN-based applications</span> with advanced security (OAuth, JWT) and real-time features. I have a strong foundation in <span className="text-primary">DSA (200+ solved)</span> and <span className="text-secondary">AI Integration</span>.
                   </p>
                   <p>
-                    I thrive on solving complex problems and turning creative ideas into functional, production-ready code. 
-                    Whether it's designing a sleek UI or architecting a robust backend, I focus on performance and quality.
+                    I thrive on designing distributed client-server architectures and integrating <span className="text-foreground">Generative AI (LLMs)</span> to enhance user workflows. My focus is on building production-ready, scalable, and user-centric systems.
                   </p>
                 </div>
 
@@ -139,8 +136,8 @@ export default function About() {
                 className="mt-8 grid grid-cols-2 gap-6"
               >
                 <div className="p-6 glass rounded-2xl text-center">
-                  <div className="text-3xl font-bold text-gradient mb-1">15+</div>
-                  <div className="text-sm text-slate-500 dark:text-gray-500 uppercase tracking-widest">Projects Completed</div>
+                  <div className="text-3xl font-bold text-gradient mb-1">200+</div>
+                  <div className="text-sm text-slate-500 dark:text-gray-500 uppercase tracking-widest">DSA Solved</div>
                 </div>
                 <div className="p-6 glass rounded-2xl text-center">
                   <div className="text-3xl font-bold text-gradient mb-1">MERN</div>

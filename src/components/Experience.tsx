@@ -31,7 +31,7 @@ const achievements = [
     icon: <Star className="text-accent" />
   },
   {
-    title: "176+ DSA & 30+ SQL Problems",
+    title: "200+ DSA & 30+ SQL Problems",
     year: "Ongoing",
     description: "Consistent problem solver on LeetCode, focusing on advanced Data Structures, Algorithms, and Database Management.",
     icon: <Code className="text-emerald-400" />

@@ -92,7 +92,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Hi, I'm <span className="text-foreground">Ijharul Haque</span>
               <br />
-              <TypewriterText texts={["Full Stack Developer", "AI Enthusiast", "UI/UX Designer"]} />
+              <TypewriterText texts={["Full Stack Developer", "SDE Core Enthusiast", "AI Integration Specialist"]} />
             </h1>
 
             
@@ -160,7 +160,7 @@ export default function Hero() {
               <div className="w-full h-full rounded-full overflow-hidden relative">
 
                 <Image 
-                  src="/ijharul-profile.png" 
+                  src="/ijharul-profile-v2.png" 
                   alt="Ijharul Haque" 
                   fill 
                   className="object-cover"

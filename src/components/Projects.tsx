@@ -8,31 +8,31 @@ import SectionReveal from "./SectionReveal";
 
 const projects = [
   {
-    title: "Alumni Association Platform",
-    description: "A comprehensive platform to connect alumni with institutions, including profiles, events, donations, and AI features.",
-    tech: ["MERN", "Socket.io", "OpenAI", "SaaS"],
+    title: "Campus Nexus",
+    description: "A comprehensive Alumni Association Platform with real-time chat, AI-powered interactions, and secure donation modules.",
+    tech: ["MERN", "Socket.io", "OpenAI", "GenAI"],
     image: "/campus-nexus.png",
     github: "https://github.com/ijharul/Campus-Nexus",
     demo: "https://campus-nexus-ten.vercel.app/login",
     color: "from-purple-500 to-blue-500"
   },
   {
-    title: "VaultX - Secure Password Manager",
-    description: "A professional-grade password manager with zero-knowledge encryption, featuring secure credential storage using AES-256 and bcrypt.",
-    tech: ["React", "Node.js", "MongoDB", "JWT", "AES-256"],
+    title: "DevFlow AI",
+    description: "An AI-powered developer playground for system design generation, DevOps automation, and intelligent debugging.",
+    tech: ["React", "Node.js", "Groq AI", "DevOps"],
+    image: "/devflow-ai.png",
+    github: "https://github.com/ijharul/Devflow-AI",
+    demo: "https://devflow-ai-rust.vercel.app",
+    color: "from-blue-600 to-indigo-600"
+  },
+  {
+    title: "VaultX",
+    description: "A professional-grade password manager featuring zero-knowledge encryption, AES-256 security, and breach detection.",
+    tech: ["React", "Node.js", "MongoDB", "Security"],
     image: "/vaultx.png",
     github: "https://github.com/ijharul/VaultX",
     demo: "https://passop-flame.vercel.app/",
     color: "from-emerald-500 to-teal-600"
-  },
-  {
-    title: "SkyCast Weather App",
-    description: "A real-time weather application with live API integration, Redux state management, and dynamic UI updates.",
-    tech: ["React", "Redux", "Weather API"],
-    image: "/weather.png",
-    github: "https://github.com/ijharul/Weather-web",
-    demo: "https://weather-web-tan-two.vercel.app/",
-    color: "from-blue-500 to-indigo-600"
   }
 ];
 

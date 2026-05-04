@@ -35,12 +35,12 @@ export default function AIAssistant() {
       answer: "His core stack is MERN (MongoDB, Express, React, Node.js). He is also proficient in Next.js, Tailwind CSS, C++, Java, and AI integration using OpenAI APIs."
     },
     {
-      keywords: ["projects", "work", "portfolio", "alumni", "password", "weather"],
-      answer: "His top projects are: 1. Campus-Nexus (Alumni Platform), 2. VaultX (Secure Password Manager), and 3. SkyCast (Weather App). You can see them in the Projects section!"
+      keywords: ["projects", "work", "portfolio", "alumni", "password", "nexus", "devflow", "vaultx"],
+      answer: "His top projects are: 1. Campus Nexus (Alumni Platform), 2. DevFlow AI (AI Developer Playground), and 3. VaultX (Secure Password Manager). You can see them in the Projects section!"
     },
     {
       keywords: ["achievements", "hackathon", "sih", "hacktoberfest", "national", "dsa", "leetcode", "sql", "problems"],
-      answer: "He has solved 176+ DSA problems and 30+ SQL problems on LeetCode. He is also a National Level Finalist for SIH 2025 and a Level 4 contributor in Hacktoberfest 2024."
+      answer: "He has solved 200+ DSA problems and 30+ SQL problems on LeetCode. He is also a National Level Finalist for SIH 2025 and a Level 4 contributor in Hacktoberfest 2024."
     },
 
     {
