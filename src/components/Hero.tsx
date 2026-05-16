@@ -157,13 +157,13 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/10 glass p-2 animate-glow">
-              <div className="w-full h-full rounded-full overflow-hidden relative">
+              <div className="w-full h-full rounded-full overflow-hidden relative bg-white">
 
                 <Image 
-                  src="/ijharul-profile-v2.png" 
+                  src="/Ijharul-profile.jpg" 
                   alt="Ijharul Haque" 
                   fill 
-                  className="object-cover"
+                  className="object-contain object-top"
                 />
 
 
